@@ -1,0 +1,190 @@
+body {
+	background: linear-gradient(135deg, #0a0f1a 0%, #1e293b 100%);
+	min-height: 100vh;
+	overflow-x: hidden;
+	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.app-container {
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 0;
+	background: linear-gradient(120deg, #0a0f1a 0%, #2563eb 100%);
+	/* Add layered gradients and shapes for depth */
+	overflow-x: hidden;
+}
+
+.app-container::before {
+	content: '';
+	position: absolute;
+	top: -120px;
+	left: -120px;
+	width: 420px;
+	height: 420px;
+	background: radial-gradient(circle, #a21caf55 0%, transparent 80%);
+	z-index: 0;
+	pointer-events: none;
+}
+.app-container::after {
+	content: '';
+	position: absolute;
+	bottom: -160px;
+	right: -160px;
+	width: 520px;
+	height: 520px;
+	background: radial-gradient(circle, #ffe06633 0%, transparent 80%);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.app-container > * {
+	position: relative;
+	z-index: 1;
+}
+
+/* Navbar styles and animation */
+.animate-fadeInDown {
+	animation: fadeInDown 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.navbar {
+	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+	background: linear-gradient(90deg, #2563eb 0%, #9333ea 100%);
+	box-shadow: 0 4px 24px rgba(59,130,246,0.15);
+}
+.nav-links li a {
+	transition: color 0.2s, text-shadow 0.2s;
+	padding: 0.25rem 0.75rem;
+	border-radius: 0.5rem;
+}
+.nav-links li a:hover {
+	color: #fff;
+	background: linear-gradient(90deg, #3b82f6 0%, #a21caf 100%);
+	text-shadow: 0 0 8px #3b82f6, 0 0 16px #a21caf;
+}
+
+/* Hero glow animation */
+.glow-text {
+	text-shadow: 0 0 24px #3b82f6, 0 0 48px #a21caf;
+	animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+	from {
+		text-shadow: 0 0 10px #3b82f6, 0 0 20px #a21caf;
+	}
+	to {
+		text-shadow: 0 0 40px #60a5fa, 0 0 60px #a21caf;
+	}
+}
+
+/* Smooth fade in */
+.fade-in {
+	animation: fadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px) scale(0.98); }
+	to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Gallery grid */
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+.gallery-grid img {
+	width: 100%;
+	border-radius: 1rem;
+	box-shadow: 0 4px 24px rgba(59,130,246,0.15), 0 0 0 4px #9333ea22;
+	transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+	filter: saturate(1.2) brightness(1.1);
+}
+.gallery-grid img:hover {
+	transform: scale(1.07) rotate(-2deg);
+	box-shadow: 0 8px 32px rgba(59,130,246,0.25), 0 0 0 8px #a21caf33;
+	filter: saturate(1.5) brightness(1.2);
+}
+
+/* Client logos */
+.client-logos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2rem;
+}
+.client-logos img {
+	height: 60px;
+	width: auto;
+	filter: grayscale(0.2) brightness(1.2) drop-shadow(0 0 8px #9333ea88);
+	opacity: 0.9;
+	background: linear-gradient(90deg, #3b82f6 0%, #a21caf 100%);
+	border-radius: 0.75rem;
+	padding: 0.5rem 1.5rem;
+	transition: filter 0.2s, opacity 0.2s, box-shadow 0.2s;
+	box-shadow: 0 2px 12px #9333ea22;
+}
+.client-logos img:hover {
+	filter: none;
+	opacity: 1;
+	box-shadow: 0 4px 24px #3b82f655, 0 0 0 4px #a21caf33;
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	border: 1.5px solid #9333ea;
+	background: linear-gradient(90deg, #0a0f1a 60%, #2563eb22 100%);
+	color: #fff;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	transition: border 0.2s, box-shadow 0.2s;
+	box-shadow: 0 2px 8px #9333ea11;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+	border-color: #60a5fa;
+	outline: none;
+	box-shadow: 0 0 0 2px #3b82f6;
+}
+.contact-form button {
+	background: linear-gradient(90deg, #2563eb 0%, #a21caf 100%);
+	color: #fff;
+	border: none;
+	padding: 0.75rem 2rem;
+	border-radius: 2rem;
+	font-weight: 700;
+	font-size: 1.1rem;
+	cursor: pointer;
+	letter-spacing: 1px;
+	box-shadow: 0 2px 12px #2563eb33;
+	transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.contact-form button:hover {
+	background: linear-gradient(90deg, #a21caf 0%, #2563eb 100%);
+	transform: scale(1.07);
+	box-shadow: 0 4px 24px #a21caf33;
+}
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(120deg, #2563eb 0%, #a21caf 100%);
+	border-radius: 4px;
+}
