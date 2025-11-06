@@ -148,7 +148,7 @@ import "./Navbar.css";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "#about-section" },
-  { name: "Services", path: "/services" },
+  { name: "Services", path: "#" },
 ];
 
 const Navbar = () => {

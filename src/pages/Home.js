@@ -244,7 +244,7 @@ const Home = () => {
         >
           <div className="hero-inspiring" style={{ fontSize: '5.5rem' }}>Inspiring</div>
           <div className="hero-to" style={{ fontSize: '2rem', margin: '0.2rem 0' }}>to</div>
-          <div className="hero-dream" style={{ fontSize: '3.5rem' }}>Dream, Learn And Grow</div>
+          <div className="hero-dream" style={{ fontSize: '3.5rem' }}>Dream, Learn and Grow</div>
         </motion.h1>
         
         {/* Glowing border effect */}
@@ -367,7 +367,7 @@ const Home = () => {
         maxWidth: '1200px',
         margin: '0 auto',
       }}
-    >
+    > 
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -751,16 +751,16 @@ OUR PORTFOLIO        </motion.h3>
           }}
         >
           <p style={{ color: '#4a5568', marginBottom: '1rem' }}>
-            <strong>Location:</strong> KRL Road, Kundanur Jn , Kochi
+            <strong>Location:</strong> KRL Road, Kundannoor Jn , Kochi
           </p>
           <p style={{ color: '#4a5568', marginBottom: '1rem' }}>
-            <strong>Email:</strong> Info@childcraftbooks.com
+            <strong>Email:</strong> info@childcraftbooks.com
           </p>
           <p style={{ color: '#4a5568', marginBottom: '1rem' }}>
             <strong>Phone:</strong> +91 95392 72059
           </p>
           <p style={{ color: '#4a5568' }}>
-            <strong>Working Hours:</strong> Mon - Sat: 9:00 AM - 5:30 PM
+            <strong>Working Hours:</strong> Mon - Sat: 9:30 AM - 5:30 PM
           </p>
         </motion.div>
 
