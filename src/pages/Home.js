@@ -484,6 +484,7 @@ We are dedicated to supporting schools, educators, and learners through a range 
 
     {/* Services Grid */}
     <section
+     id="portfolio-section"
       className="section-padding"
       style={{
         padding: '5rem 2rem',
@@ -518,7 +519,7 @@ OUR PORTFOLIO        </motion.h3>
           }}
         >
           {[
-            { title: 'KINDERGARTEN SERIES', desc: 'Our Kindergarten Series is thoughtfully designed to make early learning a joyful, meaningful, and holistic experience.', icon: '👶', color: '#ff6b6b' },
+            { title: 'KINDERGARTEN SERIES', desc: 'Our Kindergarten Series is thoughtfully designed to make early learning a joyful, meaningful, and holistic experience.', icon: '👦', color: '#ff6b6b' },
             { title: 'COMPUTER SERIES', desc: 'Our Computer Series is designed to build digital literacy from the ground up, combining conceptual clarity with hands-on learning.', icon: '🖥️', color: '#4ecdc4' },
             { title: 'HINDI SERIES', desc: 'Our Hindi Series is designed to make language learning engaging, culturally rich, and conceptually strong.', icon: 'अ', color: '#45b7d1' },
             { title: 'MALAYALAM SERIES', desc: 'Our Malayalam Series is crafted to nurture a love for mother tongue and literature while strengthening the linguistic foundation in young learners..', icon: 'അ', color: '#fd79a8' },
