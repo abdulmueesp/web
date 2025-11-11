@@ -1,3 +1,4 @@
+/* --- Navbar Base --- */
 .navbar {
   position: fixed;
   top: 0;
@@ -10,10 +11,11 @@
   font-family: sans-serif;
 }
 
+/* --- Container --- */
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100%;
   padding: 15px 15px;
   max-width: 1200px;
@@ -48,7 +50,7 @@
   font-size: larger;
 }
 
-/* --- Links --- */
+/* --- Nav Links --- */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -56,7 +58,7 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  margin-top:15px;
+  margin-top: 15px;
 }
 
 .nav-item {
@@ -110,7 +112,7 @@
   transform: scale(1.05);
 }
 
-/* --- Mobile --- */
+/* --- Mobile Menu Button --- */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -120,6 +122,7 @@
   cursor: pointer;
 }
 
+/* --- Mobile Menu --- */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -159,7 +162,7 @@
   padding: 16px 0;
 }
 
-/* --- Animation --- */
+/* --- Animations --- */
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -184,6 +187,11 @@
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
+  .nav-container {
+    max-width: 100%;
+    padding: 14px 20px;
+  }
+
   .nav-links,
   .nav-contact-wrapper {
     display: none;
@@ -203,9 +211,5 @@
 
   .company-split {
     display: flex;
-  }
-
-  .nav-container {
-    padding: 14px 20px;
   }
 }
