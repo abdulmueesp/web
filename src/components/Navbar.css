@@ -1,12 +1,3 @@
-.nav-divider {
-  width: 2px;
-  height: 48px;
-  background: linear-gradient(180deg, #ffe066 0%, #2563eb 100%);
-  margin: 0 32px 0 0;
-  border-radius: 2px;
-  align-self: center;
-  opacity: 0.85;
-}
 .navbar {
   position: fixed;
   top: 0;
@@ -14,113 +5,114 @@
   width: 100%;
   background: #ffffff;
   z-index: 1000;
-  animation: slideDown 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.5s ease;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
+  justify-content:space-between;
+  width: 100%;
+  padding: 15px 15px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 17px 29px 17px 0;
-  position: relative;
+  box-sizing: border-box;
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 80px;
+/* --- Company Name --- */
+.company-name {
   font-family: Conthrax, sans-serif;
-  flex: 0 0 auto;
-  margin-right: 48px;
-}
-
-.logo {
-  height: 120px;
-  width: 250px;
-  /* border-radius: 50%; */
-  /* box-shadow removed for cleaner look */
-  background: none;
-  object-fit: contain;
-  display: block;
-  margin-top: -86px;
-  margin-bottom: -86px;
+  color: #000;
+  text-transform: uppercase;
   font-weight: 900;
-  padding: 17px 29px 17px 0;
-  text-shadow: none;
+  letter-spacing: 1.5px;
+  display: block;
 }
 
-.highlight {
-  color: #2563eb;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-left: 6px;
+.company-full {
+  font-size: 20px;
+  display: block;
+  white-space: nowrap;
 }
 
+.company-split {
+  display: none;
+  flex-direction: column;
+  font-size: 16px;
+  text-align: left;
+}
+
+.company-split span:first-child {
+  font-size: larger;
+}
+
+/* --- Links --- */
 .nav-links {
   display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  flex: 1 1 0;
-  justify-content: center;
+  gap: 2rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-contact-wrapper {
-  flex: 0 0 auto;
-  margin-left: auto;
-  display: flex;
+  justify-content: center;
   align-items: center;
+  flex: 1;
+  margin-top:15px;
 }
 
 .nav-item {
-  color: #130404;
+  color: #111;
   font-weight: 700;
-  padding: 8px 18px;
-  border-radius: 8px;
+  font-size: 17px;
   text-decoration: none;
-  font-size: .90 rem;
-  letter-spacing: 0.5px;
-  transition: color 0.2s, background 0.2s, box-shadow 0.2s, letter-spacing 0.2s;
-}
-
-.nav-item:hover {
-  color: #2563eb;
-  letter-spacing: 3.5px;
-  text-shadow: 0 2px 12px #2563eb55;
-}
-
-.nav-item.active {
-  color: #2563eb;
-    text-shadow: 0 2px 12px #2563eb55;
-
-}
-
-.nav-item, .nav-contact-btn, .mobile-menu .nav-item {
-  display: block;
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 2.5px;
-  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
   font-family: Conthrax, sans-serif;
   text-transform: uppercase;
-  color: #050000;
-  background: transparent;
-  border: none;
-  transition: color 0.2s, background 0.2s, box-shadow 0.2s, letter-spacing 0.2s;
 }
 
-.nav-contact-btn:hover {
+.nav-item:hover,
+.nav-item.active {
   color: #2563eb;
-  letter-spacing: 3.5px;
-  text-shadow: 0 2px 12px #2563eb55;
+  letter-spacing: 1px;
 }
 
+/* --- Contact + Logos --- */
+.nav-contact-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-link {
+  font-weight: 800;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.contact-link:hover {
+  color: #2563eb;
+}
+
+/* --- Logos --- */
+.vivanta-logo,
+.rch-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.vivanta-logo:hover,
+.rch-logo:hover {
+  transform: scale(1.05);
+}
+
+/* --- Mobile --- */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: #2563eb;
   background: none;
   border: none;
@@ -130,46 +122,43 @@
 .mobile-menu {
   display: none;
   flex-direction: column;
+  align-items: center;
   background: #fff;
+  width: 100%;
   border-top: 2px solid #e5e7eb;
   box-shadow: 0 4px 24px #2563eb11;
+  animation: dropDown 0.4s ease;
+}
+
+.slide-down {
+  animation: dropDown 0.4s ease forwards;
 }
 
 .mobile-menu .nav-item {
-  color: #222;
-  background: none;
-  border-radius: 0;
-  font-size: 1.1rem;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 18px;
   font-weight: 700;
-  padding: 16px;
-  text-align: center;
+  color: #000;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  background: none;
 }
 
-.mobile-menu .nav-item.active {
-  background: #ffe066;
-  color: #ffe066;
-  text-shadow: 0 2px 12px #2563eb99;
-}
-
-.mobile-menu .nav-contact-btn {
-  background: #2563eb;
-  color: #fff;
-  font-weight: 800;
-  border-radius: 2rem;
-  margin: 10px auto;
-  padding: 10px 0;
-  width: 90%;
-  display: block;
-  text-align: center;
-  border: 2px solid #2563eb;
-}
-
-.mobile-menu .nav-contact-btn:hover {
-  background: #ffe066;
+.mobile-menu .nav-item:hover {
   color: #2563eb;
-  border: 2px solid #ffe066;
 }
 
+.mobile-company-name {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  padding: 16px 0;
+}
+
+/* --- Animation --- */
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -181,80 +170,41 @@
   }
 }
 
+@keyframes dropDown {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Responsive --- */
 @media (max-width: 1024px) {
-  .nav-links {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-  }
+  .nav-links,
   .nav-contact-wrapper {
     display: none;
   }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .mobile-menu {
     display: flex;
   }
-}
 
-.navbar, .nav-container, .nav-logo, .nav-links, .nav-item, .nav-contact-btn, .menu-toggle, .mobile-menu {
-  font-family: Conthrax, sans-serif;
-  unicode-bidi: isolate;
-  letter-spacing: -0.6px;
-}
+  .company-full {
+    display: none;
+  }
 
-/* Company Name Styles */
-.company-name {
-  font-family: Conthrax, sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #000000;
-  white-space: nowrap;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  .company-split {
+    display: flex;
+  }
 
-.mobile-company-name {
-  font-family: Conthrax, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #2563eb;
-  text-align: center;
-  padding: 16px;
-  border-top: 1px solid #e5e7eb;
-  margin-top: 10px;
-}
-
-/* Vivanta Logo Styles */
-.vivanta-logo {
-  height: 60px;
-  width: auto;
-  margin-left: 25px;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.2s ease;
-}
-
-.vivanta-logo:hover {
-  transform: scale(1.05);
-}
-
-/* RCH Logo Styles */
-.rch-logo {
-  height: 60px;
-  width: auto;
-  margin-left: 20px;
-  object-fit: contain;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.rch-logo:hover {
-  transform: scale(1.05);
+  .nav-container {
+    padding: 14px 20px;
+  }
 }
