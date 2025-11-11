@@ -218,6 +218,7 @@ const Home = () => {
         <motion.h1
           className="hero-title"
           style={{
+            position: 'relative',      
             fontSize: '4.5rem',
             fontWeight: 900,
             fontFamily: '"Lucida Handwriting", "Brush Script MT", cursive',
@@ -229,7 +230,7 @@ const Home = () => {
             backgroundClip: 'text',
             letterSpacing: '0.1em',
             textAlign: 'center',
-            position: 'relative',
+          
             textShadow: 'none',
             lineHeight: 1.2,
           }}
@@ -242,9 +243,9 @@ const Home = () => {
             ease: "linear",
           }}
         >
-          <div className="hero-inspiring" style={{ fontSize: '5.5rem' }}>Inspiring</div>
-          <div className="hero-to" style={{ fontSize: '2rem', margin: '0.2rem 0' }}>to</div>
-          <div className="hero-dream" style={{ fontSize: '3.5rem' }}>Dream, Learn and Grow</div>
+          <div className="hero-inspiring" >Inspiring</div>
+          <div className="hero-to">to</div>
+          <div className="hero-dream">Dream, Learn and Grow</div>
         </motion.h1>
         
         {/* Glowing border effect */}
@@ -253,13 +254,13 @@ const Home = () => {
             position: 'absolute',
             top: '-10px',
             left: '50%',
-            transform: 'translateX(-50%)',
+            transform: 'translateX(-50%) scale(1.05)',
             width: '120%',
             height: '120%',
             borderRadius: '20px',
             filter: 'blur(20px)',
             opacity: 0.3,
-            zIndex: -1,
+            zIndex: 0, // ✅ no overlap issue
           }}
           animate={{
             scale: [1, 1.1, 1],
