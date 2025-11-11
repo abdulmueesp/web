@@ -260,7 +260,8 @@ const Home = () => {
             borderRadius: '20px',
             filter: 'blur(20px)',
             opacity: 0.3,
-            zIndex: 0, // ✅ no overlap issue
+            zIndex: -1, // ✅ moved behind text completely
+    pointerEvents: 'none', // ✅ ensures it won’t block text or clicks
           }}
           animate={{
             scale: [1, 1.1, 1],
