@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal scroll */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* Glow animation */
 .glow-text {
   animation: textGlow 2s ease-in-out infinite alternate;

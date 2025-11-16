@@ -1,6 +1,8 @@
 body {
 	background: linear-gradient(135deg, #0a0f1a 0%, #1e293b 100%);
 	min-height: 100vh;
+	width: 100%;
+	max-width: 100%;
 	overflow-x: hidden;
 	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
@@ -11,6 +13,8 @@ body {
 	padding-bottom: 0;
 	background: linear-gradient(120deg, #0a0f1a 0%, #2563eb 100%);
 	/* Add layered gradients and shapes for depth */
+	width: 100%;
+	max-width: 100%;
 	overflow-x: hidden;
 }
 
@@ -24,6 +28,7 @@ body {
 	background: radial-gradient(circle, #a21caf55 0%, transparent 80%);
 	z-index: 0;
 	pointer-events: none;
+	overflow: hidden;
 }
 .app-container::after {
 	content: '';
@@ -35,11 +40,18 @@ body {
 	background: radial-gradient(circle, #ffe06633 0%, transparent 80%);
 	z-index: 0;
 	pointer-events: none;
+	overflow: hidden;
 }
 
 .app-container > * {
 	position: relative;
 	z-index: 1;
+}
+
+main {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 /* Navbar styles and animation */

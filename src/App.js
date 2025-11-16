@@ -14,7 +14,7 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Navbar />
-        <main style={{ paddingTop: '80px' }}>
+        <main style={{ paddingTop: '80px', width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
