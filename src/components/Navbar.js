@@ -86,35 +86,35 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="mobile-menu slide-down">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              {link.path.startsWith("#") ? (
-                <button
-                  onClick={() => {
-                    scrollToSection(link.path.replace("#", ""));
-                    setMenuOpen(false);
-                  }}
-                  className="nav-item"
-                >
-                  {link.name}
-                </button>
-              ) : (
-                <Link
-                  to={link.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={`nav-item${
-                    location.pathname === link.path ? " active" : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )}
-            </li>
-          ))}
-        
-         
-        </ul>
+        <div className="mobile-menu-wrapper">
+          <ul className="mobile-menu slide-down">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                {link.path.startsWith("#") ? (
+                  <button
+                    onClick={() => {
+                      scrollToSection(link.path.replace("#", ""));
+                      setMenuOpen(false);
+                    }}
+                    className="nav-item"
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    to={link.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={`nav-item${
+                      location.pathname === link.path ? " active" : ""
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </nav>
   );
