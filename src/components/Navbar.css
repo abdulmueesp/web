@@ -21,12 +21,13 @@
   justify-content: space-between;
   width: 100%;
   min-width: 0;
-  padding: 15px 15px;
+  padding: 12px 15px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  min-height: 60px;
 }
 
 /* --- Company Name --- */
@@ -149,6 +150,9 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* --- Mobile Menu Wrapper --- */
@@ -165,7 +169,7 @@
 .mobile-menu {
   display: none;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   width: 100%;
   border-top: 2px solid #e5e7eb;
@@ -179,8 +183,20 @@
   animation: dropDown 0.4s ease forwards;
 }
 
+.mobile-menu li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
+}
+
 .mobile-menu .nav-item {
-  padding: 14px 0;
+  padding: 18px 20px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -189,6 +205,10 @@
   transition: 0.3s;
   border: none;
   background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
 }
 
 .mobile-menu .nav-item:hover {
@@ -238,10 +258,11 @@
     max-width: 100%;
     width: 100%;
     min-width: 0;
-    padding: 12px 10px;
+    padding: 14px 12px;
     flex-wrap: nowrap;
     overflow: hidden;
-    gap: 8px;
+    gap: 10px;
+    min-height: 65px;
   }
 
   .nav-links,
@@ -250,14 +271,14 @@
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
     font-size: 1.8rem;
-    padding: 0;
+    padding: 6px;
     margin-left: 8px;
     flex-shrink: 0;
-    min-width: 30px;
-    width: 30px;
-    height: 30px;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
   }
 
   .mobile-menu-wrapper {
@@ -275,35 +296,38 @@
   .company-split {
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     overflow: hidden;
     width: 100%;
     min-width: 0;
+    gap: 3px;
   }
 
   .company-split span:first-child {
-    font-size: 16px;
+    font-size: 17px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     width: 100%;
+    font-weight: 900;
   }
 
   .company-split span:last-child {
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     width: 100%;
+    font-weight: 700;
   }
 
   .nav-logo {
     flex: 0 1 auto;
     min-width: 0;
-    max-width: calc(100% - 50px);
+    max-width: calc(100% - 60px);
     overflow: hidden;
     width: auto;
   }
@@ -314,20 +338,117 @@
     overflow: hidden;
     display: block;
   }
+
+  .mobile-menu .nav-item {
+    padding: 16px;
+    font-size: 17px;
+    min-height: 50px;
+  }
 }
 
 /* --- Mobile (Smaller screens) --- */
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 12px 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 8px;
+    min-height: 60px;
+  }
+
+  .company-split {
+    font-size: 14px;
+    gap: 3px;
+  }
+
+  .company-split span:first-child {
+    font-size: 16px;
+  }
+
+  .company-split span:last-child {
+    font-size: 11px;
+  }
+
+  .menu-toggle {
+    font-size: 1.9rem;
+    margin-left: 6px;
+    min-width: 38px;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+
+  .nav-logo {
+    max-width: calc(100% - 65px);
+    min-width: 0;
+  }
+
+  .mobile-menu .nav-item {
+    font-size: 17px;
+    padding: 16px;
+    min-height: 50px;
+  }
+}
+
+/* --- Very Small Mobile --- */
+@media (max-width: 480px) {
   .nav-container {
     padding: 10px 8px;
     width: 100%;
     max-width: 100%;
     min-width: 0;
     gap: 6px;
+    min-height: 55px;
+  }
+
+  .company-split {
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    gap: 2px;
+  }
+
+  .company-split span:first-child {
+    font-size: 15px;
+  }
+
+  .company-split span:last-child {
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem;
+    margin-left: 4px;
+    min-width: 34px;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+  }
+
+  .nav-logo {
+    max-width: calc(100% - 70px);
+    min-width: 0;
+  }
+
+  .mobile-menu .nav-item {
+    font-size: 17px;
+    padding: 16px;
+    min-height: 50px;
+  }
+}
+
+/* --- Extra Small Mobile --- */
+@media (max-width: 360px) {
+  .nav-container {
+    padding: 10px 8px;
+    gap: 5px;
+    min-height: 55px;
   }
 
   .company-split {
     font-size: 12px;
+    letter-spacing: 0.2px;
+    gap: 2px;
   }
 
   .company-split span:first-child {
@@ -335,92 +456,25 @@
   }
 
   .company-split span:last-child {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .menu-toggle {
-    font-size: 1.5rem;
-    margin-left: 8px;
-    min-width: 28px;
+    font-size: 1.7rem;
+    margin-left: 3px;
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
   }
 
   .nav-logo {
-    max-width: calc(100% - 45px);
-    min-width: 0;
+    max-width: calc(100% - 65px);
   }
 
   .mobile-menu .nav-item {
     font-size: 16px;
-    padding: 12px 0;
-  }
-}
-
-/* --- Very Small Mobile --- */
-@media (max-width: 480px) {
-  .nav-container {
-    padding: 8px 6px;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    gap: 4px;
-  }
-
-  .company-split {
-    font-size: 10px;
-    letter-spacing: 0.3px;
-  }
-
-  .company-split span:first-child {
-    font-size: 12px;
-  }
-
-  .company-split span:last-child {
-    font-size: 8px;
-  }
-
-  .menu-toggle {
-    font-size: 1.4rem;
-    margin-left: 4px;
-    min-width: 24px;
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-logo {
-    max-width: calc(100% - 35px);
-    min-width: 0;
-  }
-}
-
-/* --- Extra Small Mobile --- */
-@media (max-width: 360px) {
-  .nav-container {
-    padding: 6px 4px;
-    gap: 3px;
-  }
-
-  .company-split {
-    font-size: 9px;
-    letter-spacing: 0.2px;
-  }
-
-  .company-split span:first-child {
-    font-size: 11px;
-  }
-
-  .company-split span:last-child {
-    font-size: 7px;
-  }
-
-  .menu-toggle {
-    font-size: 1.2rem;
-    margin-left: 3px;
-    min-width: 22px;
-    width: 22px;
-    height: 22px;
-  }
-
-  .nav-logo {
-    max-width: calc(100% - 30px);
+    padding: 15px;
+    min-height: 48px;
   }
 }
